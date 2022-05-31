@@ -6,14 +6,14 @@ function onOpen() {
 }
 
 
-function showPrompt() {
+function showPrompt(key=SB_KEY) {
   var ui = SpreadsheetApp.getUi(); // Same variations.
   let msg0 = '';
-  let msg1 = 'Please enter a market symbol:';
-  if (!getSymbol()) {
-    msg0 = 'The Symbol is not set.';
+  let msg1 = 'Please enter a symbol:';
+  if (!_getDocProperty(key, 1)()) {
+    msg0 = `The ${key} is not set.`;
   } else {
-    msg0 = `Your Symbol is ${getSymbol()}`;
+    msg0 = `Your ${key} is ${_getDocProperty(key, 1)()}`;
     msg1 = 'Do you want to enter a new one?'
   }
   var result = ui.prompt(
@@ -21,16 +21,16 @@ function showPrompt() {
       msg1,
       ui.ButtonSet.OK_CANCEL);
 
-  // Process the user's response.
+  /* Process the user's response. */
   var button = result.getSelectedButton();
   var text = result.getResponseText();
   if (button == ui.Button.OK) {
     // User clicked "OK".
-    setSymbol(text);
-    ui.alert('Your Symbol is ' + getSymbol() + '.');
+    _setString(text);
+    ui.alert(`Your ${key} is ${text}.`);
   } else if (button == ui.Button.CANCEL) {
     // User clicked "Cancel".
-    ui.alert('Symbol unchanged.');
+    ui.alert(`${key} unchanged.`);
   };
 }
 

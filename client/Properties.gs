@@ -1,5 +1,6 @@
 const CR_KEY = 'CURRENT_ROW';
 const SB_KEY = 'SYMBOL';
+const EX_KEY = 'EXCHANGE';
 
 function _getDocProperty(propKey, isString=false) {
   let documnetProperties = PropertiesService.getDocumentProperties();
@@ -33,8 +34,16 @@ function setCurrentRow(n) {
 }
 
 
-function setSymbol(n) {
-  _setDocProperty(SB_KEY, n, arguments.callee.name, 1);
+function setSymbol(s) {
+  _setString(s, SB_KEY);
+}
+
+function setExchange(s) {
+  _setString(s, EX_KEY);
+}
+
+function _setString(s, key) {
+  _setDocProperty(key, s, arguments.callee.name, 1);
 }
 
 
@@ -44,6 +53,10 @@ function getCurrentRow() {
 
 
 function getSymbol() {
-  return _getDocProperty(SB_KEY);
+  return _getDocProperty(SB_KEY, 1);
+}
+
+function getExchange() {
+  return _getDocProperty(EX_KEY, 1);
 }
 
