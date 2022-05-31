@@ -10,12 +10,12 @@ function showPrompt(isPosZero=false) {
   var ui = SpreadsheetApp.getUi(); // Same variations.
   let msg0 = '';
   let msg1 = 'Please enter a market symbol:';
-  if (!getPosNumber()) {
+  if (!getSymbol()) {
     msg0 = 'The position number is not set.';
   } else if (isPosZero) {
-    msg0 = `Position ${getPosNumber()} is empty.`;
+    msg0 = `Symbol ${getSymbol()} is empty.`;
   } else {
-    msg0 = `Your position number is ${getPosNumber()}`;
+    msg0 = `Your position number is ${getSymbol()}`;
     msg1 = 'Do you want to enter a new one?'
   }
   var result = ui.prompt(
@@ -28,11 +28,11 @@ function showPrompt(isPosZero=false) {
   var text = result.getResponseText();
   if (button == ui.Button.OK) {
     // User clicked "OK".
-    setPosNumber(Number(text));
-    ui.alert('Your Position Number is ' + getPosNumber() + '.');
+    setSymbol(Number(text));
+    ui.alert('Your Symbol is ' + getSymbol() + '.');
   } else if (button == ui.Button.CANCEL) {
     // User clicked "Cancel".
-    ui.alert('Positin Number unchanged.');
+    ui.alert('Symbol unchanged.');
   };
 }
 
