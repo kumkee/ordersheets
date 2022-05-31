@@ -11,11 +11,11 @@ function showPrompt(isPosZero=false) {
   let msg0 = '';
   let msg1 = 'Please enter a market symbol:';
   if (!getSymbol()) {
-    msg0 = 'The position number is not set.';
+    msg0 = 'The Symbol is not set.';
   } else if (isPosZero) {
     msg0 = `Symbol ${getSymbol()} is empty.`;
   } else {
-    msg0 = `Your position number is ${getSymbol()}`;
+    msg0 = `Your Symbol is ${getSymbol()}`;
     msg1 = 'Do you want to enter a new one?'
   }
   var result = ui.prompt(
