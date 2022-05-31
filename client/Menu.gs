@@ -1,15 +1,19 @@
 function onOpen() {
   SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
       .createMenu('Settings')
-      .addItem('Set Symbol', 'showPrompt')
+      .addItem('Set Symbol', 'showSymbolPrompt')
+      .addItem('Set Exchange', 'showExchangePrompt')
       .addToUi();
 }
+
+showSymbolPrompt = () => showPrompt(SB_KEY);
+showExchangePrompt = () => showPrompt(EX_KEY);
 
 
 function showPrompt(key=SB_KEY) {
   var ui = SpreadsheetApp.getUi(); // Same variations.
   let msg0 = '';
-  let msg1 = 'Please enter a symbol:';
+  let msg1 = `Please enter a ${key}:`;
   if (!_getDocProperty(key, 1)) {
     msg0 = `The ${key} is not set.`;
   } else {
