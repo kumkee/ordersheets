@@ -40,10 +40,5 @@ function showPrompt(key=SB_KEY) {
 
 
 function doSomething() {
-  Logger.log('doSomething is called!~!');
-  var scriptProperties = PropertiesService.getDocumentProperties();
-  var b = scriptProperties.getProperties();
-  Logger.log(b);
-  if (Object.keys(b).length==0) {Logger.log('Nothing')};
-  Logger.log(_getDocProperty(SB_KEY, 1));
+  Logger.log(getOrderbook('binance','BTC/USDT'));
 }
