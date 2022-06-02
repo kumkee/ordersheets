@@ -1,6 +1,7 @@
 const CR_KEY = 'CURRENT_ROW';
 const SB_KEY = 'SYMBOL';
 const EX_KEY = 'EXCHANGE';
+const LV_KEY = 'LEVELS';
 
 function _getDocProperty(propKey, isString=false) {
   let documnetProperties = PropertiesService.getDocumentProperties();
@@ -29,6 +30,11 @@ function _setDocProperty(propKey, n, callerName, isString=false) {
 }
 
 
+function setLevels(n) {
+  _setDocProperty(LV_KEY, n, arguments.callee.name);
+}
+
+
 function setCurrentRow(n) {
   _setDocProperty(CR_KEY, n, arguments.callee.name);
 }
@@ -44,6 +50,11 @@ function setExchange(s) {
 
 function _setString(s, key) {
   _setDocProperty(key, s, arguments.callee.name, 1);
+}
+
+
+function getLevels() {
+  return _getDocProperty(LV_KEY);
 }
 
 
