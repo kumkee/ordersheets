@@ -10,14 +10,14 @@ showSymbolPrompt = () => showPrompt(SB_KEY);
 showExchangePrompt = () => showPrompt(EX_KEY);
 
 
-function showPrompt(key=SB_KEY) {
+function showPrompt(key=SB_KEY, isString) {
   var ui = SpreadsheetApp.getUi(); // Same variations.
   let msg0 = '';
   let msg1 = `Please enter a ${key}:`;
-  if (!_getDocProperty(key, 1)) {
+  if (!_getDocProperty(key, isString)) {
     msg0 = `The ${key} is not set.`;
   } else {
-    msg0 = `Your ${key} is ${_getDocProperty(key, 1)}`;
+    msg0 = `Your ${key} is ${_getDocProperty(key, isString)}`;
     msg1 = 'Do you want to enter a new one?'
   }
   var result = ui.prompt(
@@ -30,7 +30,8 @@ function showPrompt(key=SB_KEY) {
   var text = result.getResponseText();
   if (button == ui.Button.OK) {
     // User clicked "OK".
-    _setString(text, key);
+    // _setString(text, key);
+    _setDocProperty(key, text, arguments.callee.name, isString)
     ui.alert(`Your ${key} is ${text}.`);
   } else if (button == ui.Button.CANCEL) {
     // User clicked "Cancel".
