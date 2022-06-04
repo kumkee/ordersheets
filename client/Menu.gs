@@ -31,7 +31,7 @@ function showPrompt(key=SB_KEY, isString) {
   if (button == ui.Button.OK) {
     // User clicked "OK".
     // _setString(text, key);
-    _setDocProperty(key, text, arguments.callee.name, isString)
+    _setDocProperty(key, text, "showPrompt", isString)
     ui.alert(`Your ${key} is ${text}.`);
   } else if (button == ui.Button.CANCEL) {
     // User clicked "Cancel".
