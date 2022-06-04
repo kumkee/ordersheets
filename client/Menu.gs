@@ -3,11 +3,13 @@ function onOpen() {
       .createMenu('Settings')
       .addItem('Set Symbol', 'showSymbolPrompt')
       .addItem('Set Exchange', 'showExchangePrompt')
+      .addItem('Set Depth', 'showDepthPrompt')
       .addToUi();
 }
 
-showSymbolPrompt = () => showPrompt(SB_KEY);
-showExchangePrompt = () => showPrompt(EX_KEY);
+showSymbolPrompt = () => showPrompt(SB_KEY, 1);
+showExchangePrompt = () => showPrompt(EX_KEY, 1);
+showDepthPrompt = () => showPrompt(DP_KEY, 0);
 
 
 function showPrompt(key=SB_KEY, isString) {

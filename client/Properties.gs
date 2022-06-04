@@ -1,6 +1,7 @@
 const CR_KEY = 'CURRENT_ROW';
 const SB_KEY = 'SYMBOL';
 const EX_KEY = 'EXCHANGE';
+const DP_KEY = 'DEPTH';
 
 function _getDocProperty(propKey, isString=false) {
   let documnetProperties = PropertiesService.getDocumentProperties();
