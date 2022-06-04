@@ -30,6 +30,7 @@ function showPrompt(key=SB_KEY, isString) {
   /* Process the user's response. */
   var button = result.getSelectedButton();
   var text = result.getResponseText();
+  if (!isString) {text = Number(text);}
   if (button == ui.Button.OK) {
     // User clicked "OK".
     // _setString(text, key);
