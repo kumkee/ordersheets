@@ -15,7 +15,7 @@ function _getDocProperty(propKey, isString=false) {
 function _setDocProperty(propKey, n, callerName, isString=false) {
   let documnetProperties = PropertiesService.getDocumentProperties();
   if(!isString) {
-    if (n>0 && Number.isInteger(n)) {
+    if (n>=0 && Number.isInteger(n)) {
       documnetProperties.setProperty(propKey, n.toString());
       console.log(`${propKey} set to ${n}`)
     }
