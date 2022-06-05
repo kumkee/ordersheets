@@ -1,5 +1,5 @@
 # ordersheets
-Record cryptocurrency orderbooks on Google Sheets utilizing the big storage (limited for some) of your Google Drive.
+Record cryptocurrency orderbooks on Google Sheets utilizing the big storage (unlimited for some) of your Google Drive.
 ## Usage
 - [Run the Express server](https://expressjs.com/en/starter/hello-world.html) provided in the *server* folder.
 - Create an empty [Google Sheets](https://www.google.com/sheets/about/).
