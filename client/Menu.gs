@@ -52,4 +52,5 @@ function doSomething() {
   Logger.log(b.table);
   Logger.log('-----------------------------');
   Logger.log(Object.keys(b.table));
+  Logger.log(b.data);
 }
