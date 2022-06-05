@@ -1,6 +1,6 @@
 var ColNames = ['time', 'row'];
 const MinsInDay = 60*24;
-const TriggerMins = 30; 
+const TriggerMins = 10;
 const MaxEntries = MinsInDay / TriggerMins;
 
 
@@ -26,7 +26,7 @@ function updateIteration() {
     setColNames(range);
     let n = SpreadsheetApp.getActiveSpreadsheet().getNumSheets()
                       .toString().padStart(4, '0');
-    let sheet = getLastSheet().setName(`d{n}`);
+    let sheet = getLastSheet().setName(`d${n}`);
     sheet.setFrozenColumns(1);
     sheet.setFrozenRows(1);
   }
