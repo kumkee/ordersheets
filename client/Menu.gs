@@ -46,6 +46,8 @@ function showPrompt(key=SB_KEY, isString) {
 function doSomething() {
   let b = new  OrderSheets(getExchange(), getSymbol(), getDepth());
   Logger.log(b);
+  Logger.log('-----------------------------');
   Logger.log(b.asks);
+  Logger.log('-----------------------------');
   Logger.log(b.bids);
 }
