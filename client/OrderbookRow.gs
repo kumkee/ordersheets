@@ -27,8 +27,8 @@ class OrderbookRow {
     const places = String(this.depth).length;
     for (const k of ['bid', 'ask']) {
       for (let i=0; i<this.depth; i++) {
-        let j = (k=='ask' ? i : this.depth-i);
-        this.table[k + String(j).padStart(places, '0')] = [this[k + 's'][j][1], 'number'];
+        let j = (k=='ask' ? i : this.depth-1-i);
+        this.table[k + String(j).padStart(places, '0')] = [this[k + 's'][i][1], 'number'];
       }
     }
   }
