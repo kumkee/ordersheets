@@ -72,6 +72,6 @@ function displayMode(input, mode='text', digits=2) {
       r = Number(input);
       return r.toString();
     default: // 'text'
-      return r;
+      return input;
   }
 }
