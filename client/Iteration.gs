@@ -24,8 +24,9 @@ function updateIteration() {
     setCurrentRow(2);
     range = getRowRange(1);
     setColNames(range);
-    let n = SpreadsheetApp.getActiveSpreadsheet().getNumSheets();
-    let sheet = getLastSheet().setName(`Day ${n}`);
+    let n = SpreadsheetApp.getActiveSpreadsheet().getNumSheets()
+                      .toString().padStart(4, '0');
+    let sheet = getLastSheet().setName(`d{n}`);
     sheet.setFrozenColumns(1);
     sheet.setFrozenRows(1);
   }
@@ -59,7 +60,7 @@ function getRowRange(row) {
 
 function updateStep(dataObj){
   let n = getCurrentRow();
-  let d = (dataObj ? dataObj : getOrderbookRow()));
+  let d = (dataObj ? dataObj : getOrderbookRow());
   let vals = [Object.values(d)];
   ColNames = Object.keys(d);
   let range = getRowRange(n);
