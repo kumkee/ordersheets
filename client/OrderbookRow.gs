@@ -8,6 +8,7 @@ class OrderbookRow {
 
     this.initOrderbook();
     this.makeTable();
+    this.data = this.table;
   }
 
   initOrderbook() {
@@ -41,4 +42,13 @@ function getOrderbook(exchange, symbol, divider=1000.0, baseurl=BASEURL) {
   let rc = JSON.parse(res.getContentText());
   
   return rc;
+}
+
+
+function table2DataObj(dataTable) {
+  let r = {};
+  for (const row in dataTable) {
+    r[row] = displayMode(...dataTable[row]);
+  }
+  return r;
 }
