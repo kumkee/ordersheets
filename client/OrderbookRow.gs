@@ -1,4 +1,4 @@
-class OrderSheets {
+class OrderbookRow {
   constructor(exchange, symbol, depth, divider=1000.0, baseurl=BASEURL) {
     this.exchange = exchange;
     this.symbol = symbol;
