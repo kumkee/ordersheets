@@ -8,7 +8,7 @@ class OrderbookRow {
 
     this.initOrderbook();
     this.makeTable();
-    this.data = this.table;
+    this.data = table2DataObj(this.table);
   }
 
   initOrderbook() {
