@@ -44,7 +44,7 @@ function showPrompt(key=SB_KEY, isString) {
 
 
 function doSomething() {
-  let b = new  OrderbookRow(getExchange(), getSymbol(), getDepth());
+  let b = new OrderbookRow(getExchange(), getSymbol(), getDepth());
   Logger.log(b.bids);
   Logger.log('-----------------------------');
   Logger.log(b.asks);
@@ -52,5 +52,8 @@ function doSomething() {
   Logger.log(b.table);
   Logger.log('-----------------------------');
   Logger.log(Object.keys(b.table));
+  Logger.log('-----------------------------');
   Logger.log(b.data);
+  Logger.log('-----------------------------');
+  Logger.log(Object.keys(b.data));
 }

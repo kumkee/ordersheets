@@ -69,7 +69,7 @@ function displayMode(input, mode='text', digits=2) {
       r = Number(input/1000).toFixed(digits);
       return r.toString() + 'k';
     case 'number':
-      r = Number(input).toFixed(digits);
+      r = Number(input);
       return r.toString();
     default: // 'text'
       return r;
