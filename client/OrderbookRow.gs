@@ -1,3 +1,9 @@
+function getOrderbookRow() {
+  let b = new OrderbookRow(getExchange(), getSymbol(), getDepth());
+  return b.data;
+}
+
+
 class OrderbookRow {
   constructor(exchange, symbol, depth, divider=1000.0, baseurl=BASEURL) {
     this.exchange = exchange;

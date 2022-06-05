@@ -19,7 +19,7 @@ function updateIteration() {
   let dataObj = undefined;
   let range = getRowRange(1);
   if (! range.getValue()) {
-    dataObj = getOnChainData(getPosNumber());
+    dataObj = getOrderbookRow();
     ColNames = Object.keys(dataObj);
     setCurrentRow(2);
     range = getRowRange(1);
@@ -59,7 +59,7 @@ function getRowRange(row) {
 
 function updateStep(dataObj){
   let n = getCurrentRow();
-  let d = (dataObj ? dataObj : getOnChainData(getPosNumber()));
+  let d = (dataObj ? dataObj : getOrderbookRow()));
   let vals = [Object.values(d)];
   ColNames = Object.keys(d);
   let range = getRowRange(n);
