@@ -5,12 +5,14 @@ class OrderSheets {
     this.depth = depth;
     this.divider = divider;
     this.baseurl = baseurl;
+
+    this.initOrderbook()
   }
 
   initOrderbook() {
     this.rawOrderbook = getOrderbook(this.exchange, this.symbol, this.divider, this.baseurl);
-    this.bids = this.rawOrderbook['bids'].sort((a,b)=>a[0]-b[0]).slice(depth);
-    this.asks = this.rawOrderbook['asks'].sort((a,b)=>a[0]-b[0]).slice(-depth);
+    this.bids = this.rawOrderbook['bids'].sort((a,b)=>a[0]-b[0]).slice(this.depth);
+    this.asks = this.rawOrderbook['asks'].sort((a,b)=>a[0]-b[0]).slice(-this.depth);
     this.step = this.rawOrderbook['step'];
     this.datetime = this.rawOrderbook['datetime'];
   }
