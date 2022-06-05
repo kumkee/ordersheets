@@ -44,7 +44,6 @@ function showPrompt(key=SB_KEY, isString) {
 
 
 function doSomething() {
-  let b = getOrderbook('binance','BTC/USDT');
-  Logger.log(b['bids'].sort((a,b)=>a[0]-b[0]));
-  Logger.log(b['asks'].sort((a,b)=>a[0]-b[0]));
+  let b = new  OrderSheets(getExchange(), getSymbol(), getDepth());
+  Logger.log(b);
 }

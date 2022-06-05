@@ -61,3 +61,6 @@ function getExchange() {
   return _getDocProperty(EX_KEY, 1);
 }
 
+function getDepth() {
+  return _getDocProperty(DP_KEY);
+}
