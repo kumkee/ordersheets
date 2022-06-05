@@ -50,4 +50,6 @@ function doSomething() {
   Logger.log(b.asks);
   Logger.log('-----------------------------');
   Logger.log(b.table);
+  Logger.log('-----------------------------');
+  Logger.log(Object.keys(b.table));
 }
