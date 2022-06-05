@@ -1,3 +1,3 @@
 [submodule "server"]
 	path = server
-	url = git@github.com:kumkee/ordbook-api-srv.git
+	url = git@github.com:kumkee/orderbook-api.git
