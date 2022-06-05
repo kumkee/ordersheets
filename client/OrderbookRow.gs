@@ -27,7 +27,7 @@ class OrderbookRow {
     const places = String(this.depth).length;
     for (const k of ['bid', 'ask']) {
       for (let i=0; i<this.depth; i++) {
-        let j = (k=='ask' ? i : this.depth-1-i);
+        let j = (k=='ask' ? i : this.depth-1-i); // bid labels reversed.
         this.table[k + String(j).padStart(places, '0')] = [this[k + 's'][i][1], 'number'];
       }
     }
