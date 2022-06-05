@@ -52,3 +52,26 @@ function table2DataObj(dataTable) {
   }
   return r;
 }
+
+
+function displayMode(input, mode='text', digits=2) {
+  let r = '';
+  switch (mode) {
+    case 'time':
+      return input.toISOString();
+    case 'percent':
+      r = Number(input*100).toFixed(digits);
+      return r.toString() + '%';
+    case 'permille':
+      r = Number(input*1000).toFixed(digits);
+      return r.toString() + '‰';
+    case 'k':
+      r = Number(input/1000).toFixed(digits);
+      return r.toString() + 'k';
+    case 'number':
+      r = Number(input).toFixed(digits);
+      return r.toString();
+    default: // 'text'
+      return r;
+  }
+}
