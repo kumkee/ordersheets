@@ -1,9 +1,9 @@
 function onOpen() {
   SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
       .createMenu('Settings')
-      .addItem('Set Symbol', 'showSymbolPrompt')
-      .addItem('Set Exchange', 'showExchangePrompt')
-      .addItem('Set Depth', 'showDepthPrompt')
+      .addItem('Set Symbol', 'ordersheets.showSymbolPrompt')
+      .addItem('Set Exchange', 'ordersheets.showExchangePrompt')
+      .addItem('Set Depth', 'ordersheets.showDepthPrompt')
       .addToUi();
 }
 
