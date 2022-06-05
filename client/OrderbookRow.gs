@@ -29,7 +29,9 @@ class OrderbookRow {
     this.table = {
       time: [this.time],
       step: [this.step, 'number'],
-      midPrice: [(this.bids[this.depth-1][0] + this.asks[0][0])/2.0, 'number']
+      // midPrice: [(this.bids[this.depth-1][0] + this.asks[0][0])/2.0, 'number']
+      priceBid0: this.bids[this.depth-1][0],
+      priceAsk0: this.asks[0][0]
     };
     const places = String(this.depth).length;
     for (const k of ['bid', 'ask']) {
