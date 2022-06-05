@@ -1,3 +1,4 @@
+*This branch is only for deploying the client code as a [GAS Library](https://developers.google.com/apps-script/guides/libraries). If you are copying all codes into GAS, please use the [main branch](https://github.com/kumkee/ordersheets)*
 # ordersheets
 Record cryptocurrency orderbooks on Google Sheets utilizing the big storage (unlimited for some) of your Google Drive.
 ## Usage
