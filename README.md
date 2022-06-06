@@ -1,5 +1,5 @@
 # ordersheets
-Record cryptocurrency orderbooks on Google Sheets utilizing the big storage (unlimited for some) of your Google Drive.
+Utilizing the big storage (unlimited for some) of your Google Drive, ordersheets is an Apps Script to record cryptocurrency orderbooks on Google Sheets.
 ## Usage
 - [Run the Express server](https://expressjs.com/en/starter/hello-world.html) provided in the [server](https://github.com/kumkee/orderbook-api) folder.
 - Create an empty [Google Sheets](https://www.google.com/sheets/about/).
