@@ -1,7 +1,5 @@
-var ColNames = ['time', 'row'];
-const MinsInDay = 60*24;
-const TriggerMins = 10; 
-const MaxEntries = MinsInDay / TriggerMins;
+ordersheets.TriggerMins = 10;
+ordersheets.MaxEntries = ordersheets.MinsInDay / ordersheets.TriggerMins;
 
 
 function update() {
