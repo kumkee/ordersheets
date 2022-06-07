@@ -1,7 +1,8 @@
 var ColNames = ['time', 'row'];
-const MinsInDay = 60*24;
+var MinsInDay = 60*24;
 var TriggerMins = 480;
 var MaxEntries = MinsInDay / TriggerMins;
+
 
 function setColNames(range) {
   range.setValues([ColNames]);
